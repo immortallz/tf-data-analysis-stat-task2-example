@@ -10,7 +10,7 @@ def solution(p: float, x: np.array) -> tuple:
     
     alpha = 1 - p
     loc = x.mean()
-    min_x = min(x)
+    max_x = max(x)
     n = len(x)
-    return (min_x - 0.038)/(1 - beta.ppf(alpha/2, n, 1)) + 0.038, \
-           (min_x - 0.038)/(1 - beta.ppf(1 - alpha/2, n, 1)) + 0.038
+    return (max_x - 0.038)/(1 - beta.ppf(alpha/2, 1, n)) + 0.038, \
+           (max_x - 0.038)/(1 - beta.ppf(1 - alpha/2, 1, n)) + 0.038
